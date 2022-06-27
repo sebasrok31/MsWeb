@@ -1,0 +1,74 @@
+{% extends 'MsBase.html' %}
+{% load static %}
+{% block title %} Master Student | Apuntes {% endblock %}
+{% block content %}
+<br/>
+
+<p style="text-align:center; color: #ffffff;">Selecciona tu curso por favor</p>
+
+<br/>
+<br/>
+<br/>
+
+<p id= "lbl_curso">Selecciona tu curso por favor:</p>
+
+<form action="/ApuntesGet/" method="get">
+  <select class="form-select" aria-label="Default select example" id = "scroll" name="Curso">
+    <option selected>Curso</option>
+    <option value="10A">10A</option>
+    <option value="10B">10B</option>
+    <option value="10C">10C</option>
+  </select>
+
+  <br/>
+
+
+<p id="lbl_Materia">Selecciona la materia por favor:</p>
+
+  <select class="form-select" aria-label="Default select example" id = "scroll" name="Materia">
+      <option selected>Materia</option>
+      <option value="Matematicas">Matematicas</option>
+      <option value="Español">Español</option>
+      <option value="Biolgia">Biolgia</option>
+      <option value="Historia">Historia</option>
+      <option value="Fisica">Fisica</option>
+      <option value="Ingles">Ingles</option>
+      <option value="Quimica">Quimica</option>
+      <option value="TOK">TOK</option>
+      <option value="Filosofia">Filosofia</option>
+      <option value="Frances">Frances</option>
+  </select>
+
+  <br/>
+  <input class="btn" type="submit" value="Continuar" id="Ap_butt_continuar">
+
+</form>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+  
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+{# Boton de Volver #}
+<a type="button" class="btn" id = "Ta_butt_Volv" href="/">Volver</a>
+
+{# AHORA YA ESTA PARA MAC FELICES DODOS? #}
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+{% comment "" %}<img src="{% static 'imagenes/ms.png' %}" class="img-fluid" alt="150" id = "LogoMs">
+<img src="{% static 'imagenes/realCAS.png' %}" class="img-fluid" alt="100" id = "Pinos">{% endcomment %}
+
+{% endblock content %}

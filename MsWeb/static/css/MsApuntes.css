@@ -1,0 +1,25 @@
+#scroll{
+    color: rgb(0, 0, 0);
+    position: relative;
+    left: 8%;
+    width: 30%;
+}
+
+#lbl_curso{
+    color: #fff;
+    position: relative;
+    left: 8%;
+}
+
+#lbl_Materia{
+    color: #fff;
+    position: relative;
+    left: 8%;
+}
+
+#Ap_butt_continuar{
+    background-color: #AEF78E;
+    position: relative;
+    left: 8%;
+    width: 30%;
+}

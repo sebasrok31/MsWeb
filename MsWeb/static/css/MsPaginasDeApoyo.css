@@ -1,0 +1,23 @@
+#lbl_TopPgAp{
+    text-align: center;
+    color: white;
+}
+
+#BioninjaCard{
+    width: 18rem;
+    position: absolute;
+    left: 10%;
+}
+
+#BiliotecaBlogCard{
+    width: 18rem;
+    position: absolute;
+    left: 40%;
+}
+
+#Bioknowledgy{
+    width: 18rem;
+    position: absolute;
+    left: 80%;
+
+}

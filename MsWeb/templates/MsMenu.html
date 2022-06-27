@@ -1,0 +1,41 @@
+{% extends 'MsBase.html' %}
+{% load static %}
+{% block title %} Master Student | Menu {% endblock %}
+{% block content %}
+<br/>
+
+<p style="text-align:center; color: #ffffff;">¿Que requieres?</p>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+{# Boton de tareografo #}
+<a type="button" class="btn" id = "butt_tareografo" href="/Tareografo/">Tareografo</a>
+
+{# Boton de Apuntes #}
+<a type="button" class="btn" id = "butt_Apuntes" href="/Apuntes/">Apuntes</a>
+
+{# Boton de Tutorias #}
+<a type="button" class="btn" id = "butt_Tutorias" href="/Tutorias/">Tutorias</a>
+
+{# Boton de Recursos #}
+<a type="button" class="btn" id = "butt_Recursos" href="https://corgimpin-my.sharepoint.com/:f:/g/personal/roblesmorenojuansebastian_glp_edu_co/EqUTdtFnxJlInEE4TeXMP1gB29tdQg2cptxxlUzDQnAUkg?e=AvvdSb">Recursos</a>
+
+{# Boton de Paginas De Apoyo #}
+<a type="button" class="btn" id = "butt_Paginas_De_Apoyo" href="/PaginasDeApoyo/">Paginas De Apoyo</a>
+
+{# AHORA YA ESTA PARA MAC FELICES DODOS? #}
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<img src="{% static 'imagenes/ms.png' %}" class="rounded float-start" alt="150" id = "LogoMs">
+<img src="{% static 'imagenes/realCAS.png' %}" class="rounded float-end" alt="100" id = "Pinos">
+
+{% endblock content %}

@@ -1,0 +1,44 @@
+{% extends 'MsBase.html' %}
+{% load static %}
+{% block title %} Master Student | MsPaginasDeApoyo {% endblock %}
+{% block content %}
+<br/>
+<p id="lbl_TopPgAp">Revisa una de estas paginas de apoyo, seguro que te seran utiles</p>
+<br/>
+<br/>
+<div class="card" id="BioninjaCard">
+    <img src="{% static 'imagenes/Bioninja.png' %}" class="card-img-top" alt="Bioninja">
+    <div class="card-body">
+      <h5 class="card-title">Bioninja</h5>
+      <p class="card-text">Bioninja es un sitio web creado como un proyecto CAS para informar e instruir sobre todo lo que tenga que ver con Biologia IB. Este recurso posee mucha informacion y muy buena, echale un vistazo.</p>
+      <a href="https://ib.bioninja.com.au" class="btn btn-primary" style="background-color: #C0DFA1;">Go To Bioninja</a>
+    </div>
+  </div>
+
+<div class="card" id="BiliotecaBlogCard">
+    <img src="{% static 'imagenes/BlogBiblio.png' %}" class="card-img-top" alt="Biblioteca del colegio">
+    <div class="card-body">
+      <h5 class="card-title">Blog de la biblioteca</h5>
+      <p class="card-text">Este es el blog de la biblioteca del colegio. Esta pagina contiene unas muy buenas herramientas, que te pueden ser utiles para investigacion y para la realizacion de escritos.</p>
+      <a href="http://bibliotecaglp.blogspot.com" class="btn" style="background: #C0DFA1;">Go To The Blog</a>
+    </div>
+  </div>
+
+<div class="card" id="Bioknowledgy">
+    <img src="{% static 'imagenes/Bioknowledy.png' %}" class="card-img-top" alt="Bioknowledgy">
+    <div class="card-body">
+      <h5 class="card-title">Bioknowledgy</h5>
+      <p class="card-text">Esta pagina te brinda unos muy buenos recursos para biologia y aunque esta en ingles, vale la pena por la gran cantidad de informacion que te da.</p>
+      <a href="https://www.bioknowledgy.info" class="btn" style="background: #C0DFA1;">Go To The Blog</a>
+    </div>
+  </div>
+
+<!--<div class="card" id="IbOfficial">
+    <img src="{% static 'imagenes/Bioknowledy.png' %}" class="card-img-top" alt="Bioknowledgy">
+    <div class="card-body">
+      <h5 class="card-title">Bioknowledgy</h5>
+      <p class="card-text">Esta pagina te brinda unos muy buenos recursos para biologia y aunque esta en ingles, vale la pena por la gran cantidad de informacion que te da.</p>
+      <a href="https://www.bioknowledgy.info" class="btn" style="background: #C0DFA1;">Go To The Blog</a>
+    </div>
+  </div>-->
+{% endblock content %}

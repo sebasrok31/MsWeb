@@ -1,0 +1,18 @@
+{%load static%}
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title> {%block title%}{% endblock %} </title>
+        <link type='text/css' href='{% static "css/barraNavegacion.css"%}' rel='stylesheet'/>
+    </head>
+    <body style="background-color:#2C3E50;">
+        {% include "barraNavegacion.html" %}
+        <h1 style = "color: blue;">Sebrob</h1>
+        <img src ='{% static 'imagenes/ms.png' %}'/>
+        <br/>
+        {%block content%}
+        
+        {% endblock %}
+        <p> Este es el pie de pagina </p>
+    </body>
+</html>
