@@ -1,32 +1,35 @@
 #Ta_butt_10A{
     background: #CAFF89;
     position: relative;
-    left: 13.33%;
-    width: 150px;
-    height: 50px;
+    top: 50%;
+    left: 5%;
+    width: 13%;
+    height: 60px;
 }
 
 #Ta_butt_10B{
     background: #CAFF89;
     position: relative;
-    left: 36.66%;
-    width: 150px;
-    height: 50px;
+    top: 50%;
+    left: 32%;
+    width: 13%;
+    height: 60px;
 }
 
 #Ta_butt_10C{
     background: #CAFF89;
     position: relative;
-    left: 63.67%;
-    width: 150px;
-    height: 50px;
+    top: 50%;
+    left: 55%;
+    width: 13%;
+    height: 60px;
 }
 
 #Ta_butt_Volv{
     background: #CAFF89;
     position: relative;
     top: 50%;
-    left: 80.67%;
-    width: 150px;
-    height: 50px;
+    left: 84%;
+    width: 13%;
+    height: 60px;
 }

@@ -4,21 +4,28 @@
 }
 
 #BioninjaCard{
-    width: 18rem;
+    width: 15rem;
     position: absolute;
     left: 10%;
 }
 
 #BiliotecaBlogCard{
-    width: 18rem;
+    width: 15rem;
     position: absolute;
-    left: 40%;
+    left: 30%;
 }
 
 #Bioknowledgy{
-    width: 18rem;
+    width: 15rem;
     position: absolute;
-    left: 80%;
+    left: 50%;
+
+}
+
+#Sabuco{
+    width: 15rem;
+    position: absolute;
+    left: 70%;
 
 }
 
@@ -27,6 +34,6 @@
     position: absolute;
     top: 65%;
     left: 80.67%;
-    width: 150px;
-    height: 50px;
+    width: 13%;
+    height: 60px;
 }

@@ -1,7 +1,18 @@
+from __future__ import print_function
+
 from django.http import HttpResponse, HttpResponseRedirect
 import datetime
 from django.template import Template, Context, loader
 from django.shortcuts import render
+import pygsheets
+
+import pickle
+import os.path
+from googleapiclient.discovery import build
+from google_auth_oauthlib.flow import InstalledAppFlow
+from google.auth.transport.requests import Request
+import datetime
+from google.oauth2 import service_account
 
 def bienvenida(request):
     return HttpResponse("Hello world")
@@ -105,6 +116,71 @@ def Tareografo (request):
 def Tutorias (request):
     return render(request, "MsTutorias.html",{})
 
+def TutoOpGet(request):
+    Curso_Get = request.GET["Curso"]
+    Opcion_Get = request.GET["Opcion"]
+    
+    if Curso_Get == "10A" and Opcion_Get == "Calendario":
+        url="https://calendar.google.com/calendar/u/0?cid=a2NwNDFodDIyMXRkbXVrcWc0aWZnbnRsNXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ"
+        return HttpResponseRedirect(url)
+    if Curso_Get == "10B" and Opcion_Get == "Calendario":
+        url="https://calendar.google.com/calendar/u/0?cid=ZXI0Y2p0bTQycWFna2MzanZhOHIxN2c1djhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ"
+        return HttpResponseRedirect(url)
+    if Curso_Get == "10C" and Opcion_Get == "Calendario":
+        url="https://calendar.google.com/calendar/u/0?cid=cTdoOTRpZnR0OXRwNWdxM2plZm5idnFybGNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ"
+        return HttpResponseRedirect(url)
+
+    if Opcion_Get == "Agendar tutoria":
+        return render(request, "MsTutoAg.html",{})
+    
+    if Opcion_Get == "Opcion":
+        return render(request, "MsTutorias.html",{})
+
+def TutoAgGet(request):
+    Nombre_Get = request.GET["Nombre"]
+    Dia_Get = request.GET["Dia"]
+    Hora_Get = request.GET["hora"]
+    Materia_Get = request.GET["Materia"]
+    Asunto_Get = request.GET["Asunto"]
+    Curso_Get = request.GET["curso"]
+    
+    SERVICE_ACCOUNT_FILE = "MsWeb\service_account.json"
+    SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
+
+    creds = None
+    creds = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+
+    Id = "1_KmpVTs5EtAFgE5fwwbe1kfwANKH7GbCMUJTS4MQevY"
+
+    service = build("sheets", "v4", credentials=creds)
+
+    sheet = service.spreadsheets()
+        
+    DeltaTime = datetime.timedelta(minutes=30)
+    Hora = (Hora_Get + ":00")
+    DiaIni = (Dia_Get + " " + Hora)
+
+    formato = "%Y-%m-%d %H:%M:%S"
+
+    DiaTran = datetime.datetime.strptime(DiaIni, formato)
+
+    Diasum = DiaTran+DeltaTime
+
+    DiaIniT = datetime.datetime.strftime(DiaTran, "%m/%d/%Y %H:%M:%S")
+    DiaFint = datetime.datetime.strftime(Diasum, "%m/%d/%Y %H:%M:%S")
+
+    DiaInif = str(DiaIniT)
+    DiaFin = str(DiaFint)
+
+    data = [[DiaInif, DiaFin, Nombre_Get, Materia_Get, None, None, Asunto_Get]]
+    res = sheet.values().append(spreadsheetId=Id,
+                                range=(Curso_Get+"!A2:G99"), valueInputOption="USER_ENTERED",
+                                insertDataOption="INSERT_ROWS", body={"values":data}).execute()
+        
+    return HttpResponseRedirect("/Tutorias/")
+    
+    
+
 def Apuntes (request):
     return render(request, "MsApuntes.html",{})
 
@@ -112,34 +188,34 @@ def ApuntesGet (request):
     Apuntes_Directorio={
         "10A":{
             "Matematicas":
-                "https://corgimpin-my.sharepoint.com/:w:/g/personal/roblesmorenojuansebastian_glp_edu_co/EZTxeO-OQX1IsmUOvsgLoFoBnjmNJlnOAhyL0b03ryju1A?e=Mn6AWF",
+                "https://drive.google.com/drive/folders/14ekHinLMcQL_DVz663x47H7wq8qpcM2A?usp=sharing",
             
             "Español":
-                "https://corgimpin-my.sharepoint.com/:w:/g/personal/roblesmorenojuansebastian_glp_edu_co/EWynswzOrm1Hscc9vZApEsoBon3fg7TWDejsSKvwvQLi1A?e=mCvYkT",
+                "https://drive.google.com/drive/folders/1oK9HnRCLeRwYK0BikCaNzsZ_XqNMNGPC?usp=sharing",
 
             "Biologia":
-                "https://corgimpin-my.sharepoint.com/:w:/g/personal/roblesmorenojuansebastian_glp_edu_co/ET7Y46tuSxpMvCNcg0iowUwBmEr_zfE0Mr3W7yIEF0fVeA?e=CgOvoO",
+                "https://drive.google.com/drive/folders/1PC4POJ5b8RA3kt36fbKfq47RsJ4bdG4q?usp=sharing",
             
             "Historia":
-                "https://corgimpin-my.sharepoint.com/:w:/g/personal/roblesmorenojuansebastian_glp_edu_co/ERukSNUHZxVGjaHJyzx14dEBzxjSS_9jI2UcaIfNf6feAA?e=UUFhBb",
+                "https://drive.google.com/drive/folders/15GicgKRvXpoJhZWYCF4edU2NI1xWrV7c?usp=sharing",
             
             "Fisica":
-                "https://corgimpin-my.sharepoint.com/:w:/g/personal/roblesmorenojuansebastian_glp_edu_co/EfSziFrxs5xOo7l2tFh7gycBCiGV3kEZnY427GQuZccZLQ?e=IzdE47",
+                "https://drive.google.com/drive/folders/1zAqkTepQWCKEbyx9HwSAKqzhgScq7Kkj?usp=sharing",
             
             "Ingles":
-                "https://corgimpin-my.sharepoint.com/:w:/g/personal/roblesmorenojuansebastian_glp_edu_co/Ee9ubP64q6pOq-qUpDedvqwBxWwCKlzwyTifslPMrEvGnw?e=Kfux2r",
+                "https://drive.google.com/drive/folders/1qhYmi40AMScp8Ut3MAPZmo5UocoIkIPs?usp=sharing",
             
             "Quimica":
-                "https://corgimpin-my.sharepoint.com/:w:/g/personal/roblesmorenojuansebastian_glp_edu_co/EdvmEUdRu3NFnT3faGsfbGUBqiXk2fhv-xfNA6cZxBPssg?e=3BnUFl",
+                "https://drive.google.com/drive/folders/1lg7WbiLNSZwYVLLKazvTFg7xUQX0zEL_?usp=sharing",
             
             "TOK":
-                "https://corgimpin-my.sharepoint.com/:w:/g/personal/roblesmorenojuansebastian_glp_edu_co/ER1coIAO0SpBrr8o0KMs8p8BnP3E_mUcVaPj856rXPNXFg?e=D7ZUZi",
+                "https://drive.google.com/drive/folders/1ByoF_iz5x6f5w7vmdfHlssBngfGRED_b?usp=sharing",
             
             "Filosofia":
-                "https://corgimpin-my.sharepoint.com/:w:/g/personal/roblesmorenojuansebastian_glp_edu_co/EVdKyKqPjFhGsqrgmZxnfYYBb5mJsizel_mM3lY0coPj6g?e=kjzyyx",
+                "https://drive.google.com/drive/folders/1R2CYrYMq8aDmYXXf8IZLMiAHU8Cskjtl?usp=sharing",
             
             "Frances":
-                "https://corgimpin-my.sharepoint.com/:w:/g/personal/roblesmorenojuansebastian_glp_edu_co/EfMkejaOYnxOqhRLTdI8QCMBpNx4Tshyf1Xkz9xa66GAxg?e=umbAgT",
+                "https://drive.google.com/drive/folders/1zEqtB0skBa_pCLar7hZNjcrJDudzden-?usp=sharing",
             
         },"10B":{
             "Matematicas":
@@ -201,8 +277,8 @@ def ApuntesGet (request):
                 "https://corgimpin-my.sharepoint.com/:w:/g/personal/roblesmorenojuansebastian_glp_edu_co/EXTUqFJgI1RPgalXYntlcCwBboyDJXF3BhHtT3kTrzAtog?e=Rwdaex",
             
             "Frances":
-                "https://corgimpin-my.sharepoint.com/:w:/g/personal/roblesmorenojuansebastian_glp_edu_co/EUWmvMwxaAJMttBeK_GeElUBNh0ysbBymRJsfhS4BfQmyg?e=OLKHeR"
-    }}
+                "https://corgimpin-my.sharepoint.com/:w:/g/personal/roblesmorenojuansebastian_glp_edu_co/EUWmvMwxaAJMttBeK_GeElUBNh0ysbBymRJsfhS4BfQmyg?e=OLKHeR"}
+    }
     Curso_Get = request.GET["Curso"]
     Materia_Get = request.GET["Materia"]
     

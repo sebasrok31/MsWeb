@@ -1,0 +1,92 @@
+{% extends 'MsBase.html' %}
+{% load static %}
+{% block title %} Master Student | Agendar Tutorias {% endblock %}
+{% block content %}
+<br/>
+
+<p style="text-align:center; color: #ffffff;">Rellena el formulario por favor</p>
+
+<br/>
+<br/>
+<br/>
+
+<p id="lbl_curso">Ingresa tu nombre por favor:</p>
+
+<form action="/TutoAgGet/" method="get">
+
+  <input type="text" class="form-control" id="scroll" name="Nombre">
+
+  <br>
+
+<p id="lbl_curso">Selecciona tu curso por favor:</p>
+
+  <select class="form-select" aria-label="Default select example" id = "scroll" name="curso">
+    <option selected>Materia</option>
+    <option value="10A">10A</option>
+    <option value="10B">10B</option>
+    <option value="10C">10C</option>
+  </select>
+
+  <br/>
+<p id= "lbl_curso">Selecciona el dia de tu tutoria por favor:</p>
+
+  <input id="scroll" class="form-control" type="date" name="Dia"/>
+
+  <br/>
+
+<p id="lbl_curso">Selecciona la hora de tu tutoria por favor:</p>
+
+  <input type="time" class="form-control" id="scroll" name="hora" {#min="09:00" max="18:00"#} required>
+
+  <br>
+  
+
+<p id="lbl_Materia">Selecciona la materia por favor:</p>
+
+  <select class="form-select" aria-label="Default select example" id = "scroll" name="Materia">
+      <option selected>Materia</option>
+      <option value="Matematicas">Matematicas</option>
+      <option value="Español">Español</option>
+      <option value="Biologia">Biologia</option>
+      <option value="Historia">Historia</option>
+      <option value="Fisica">Fisica</option>
+      <option value="Ingles">Ingles</option>
+      <option value="Quimica">Quimica</option>
+      <option value="TOK">TOK</option>
+      <option value="Filosofia">Filosofia</option>
+      <option value="Frances">Frances</option>
+  </select>
+
+  <br>
+
+<p id="lbl_Materia">Cuentanos el motivo de tu tutoria:</p>
+  
+  <input type="text" class="form-control" id="scroll" name="Asunto">
+
+  <br/>
+  <br/>
+  <input class="btn" type="submit" value="Continuar" id="Tu_butt_continuar">
+
+</form>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+{# Boton de Volver #}
+<a type="button" class="btn" id = "Tu_butt_Volv" href="/Tutorias/">Volver</a>
+
+{# AHORA YA ESTA PARA MAC FELICES DODOS? #}
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+{% comment "" %}<img src="{% static 'imagenes/ms.png' %}" class="img-fluid" alt="150" id = "LogoMs">
+<img src="{% static 'imagenes/realCAS.png' %}" class="img-fluid" alt="100" id = "Pinos">{% endcomment %}
+
+{% endblock content %}
