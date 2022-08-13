@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from MsWeb.views import bienvenida, bienvenidaVerde, categoria, obtenerMomentoActual, contenidoHTML, test_plantilla, plantilla_parametros, loader_plantilla, plantillaShortcut, plantillaHija1, plantillaHija2, index_test, Menu_principal, Tareografo, Tutorias, Apuntes, buscar, ApuntesGet, PaginasDeApoyo, TutoOpGet, TutoAgGet
+from MsWeb.views import bienvenida, bienvenidaVerde, categoria, obtenerMomentoActual, contenidoHTML, test_plantilla, plantilla_parametros, loader_plantilla, plantillaShortcut, plantillaHija1, plantillaHija2, index_test, Menu_principal, Tareografo, Tutorias, Apuntes, buscar, ApuntesGet, PaginasDeApoyo, TutoOpGet, TutoAgGet, Comites, InsComites
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -40,6 +40,8 @@ urlpatterns = [
     path("PaginasDeApoyo/", PaginasDeApoyo),
     path("TutoOpGet/", TutoOpGet),
     path("TutoAgGet/", TutoAgGet),
+    path("Comit/", Comites),
+    path("InsComit/", InsComites),
     
     path("", Menu_principal),
 ]

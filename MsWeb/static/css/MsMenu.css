@@ -54,3 +54,20 @@
     height: 400px;
     right: 5%;
 }
+
+#butt_INS{
+    background: #C0DFA1;
+    position: relative;
+    top: 50%;
+    left: 44%;
+    width: 13%;
+    height: 60px;
+
+}
+
+#INS_butt_continuar{
+    background-color: #C0DFA1;
+    position: relative;
+    left: 8%;
+    width: 30%;
+}

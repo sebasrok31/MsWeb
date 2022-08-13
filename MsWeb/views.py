@@ -4,7 +4,6 @@ from django.http import HttpResponse, HttpResponseRedirect
 import datetime
 from django.template import Template, Context, loader
 from django.shortcuts import render
-import pygsheets
 
 import pickle
 import os.path
@@ -293,3 +292,29 @@ def buscar (request):
 
 def PaginasDeApoyo(request):
     return render(request, "MsPaginasDeApoyo.html",{})
+
+def Comites(request):
+    return render(request, "MsComite.html",{})
+
+def InsComites(request):
+    Nombre_Get = request.GET["Nombre"]
+    Comite_Get = request. GET["Curso"]
+    
+    SERVICE_ACCOUNT_FILE = "MsWeb\service_account.json"
+    SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
+
+    creds = None
+    creds = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+
+    Id = "15BMY-9P169GF_2fhVK_ovkBmVU8ckLdZhTbkuQ6eYKE"
+
+    service = build("sheets", "v4", credentials=creds)
+
+    sheet = service.spreadsheets()
+    
+    data = [[Nombre_Get, Comite_Get]]
+    res = sheet.values().append(spreadsheetId=Id,
+                                range=("Comites"+"!A2:B140"), valueInputOption="USER_ENTERED",
+                                insertDataOption="INSERT_ROWS", body={"values":data}).execute()
+        
+    return HttpResponseRedirect("/")

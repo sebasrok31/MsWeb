@@ -1,0 +1,44 @@
+{% extends 'MsBase.html' %}
+{% load static %}
+{% block title %} Master Student | Inscripcion de Comites {% endblock %}
+{% block content %}
+<br/>
+
+<p style="text-align:center; color: #ffffff;">Rellena el siguente formulario</p>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<p id="lbl_curso">Ingresa tu nombre por favor:</p>
+
+<form action="/InsComit/" method="get">
+
+    <br>
+    <input type="text" class="form-control" id="scroll" name="Nombre">
+    <br>
+<p id="lbl_curso">A que comite de san valentin vas a pertenecer</p>
+    <br>
+    <select class="form-select" aria-label="Default select example" id = "scroll" name="Curso">
+        <option selected>Comites</option>
+        <option value="Videojuegos">Videojuegos</option>
+        <option value="Rosas">Rosas</option>
+        <option value="Bombas">Bombas</option>
+        <option value="Cartas">Cartas</option>
+        <option value="Contaduria">Contaduria</option>
+        <option value="Logistica">General</option>
+        <option value="Caja Misteriosa">Caja Misteriosa</option>
+        <option value="Serenata-Instrumental">Serenata-Instrumental</option>
+        <option value="Fotos">Fotos</option>
+        <option value="Serenatas-Mariachis">Serenatas-Mariachis</option>
+        <option value="Pegale a cupido">Pegale A cupido</option>
+      </select>
+    <br>
+    <input class="btn" type="submit" value="Continuar" id="INS_butt_continuar">
+</form>
+<br>
+<br>
+<p id="lbl_curso">Recuerda llenar tu planificador de CAS</p>
+{% endblock content %}
