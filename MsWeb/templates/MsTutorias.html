@@ -1,49 +1,22 @@
-{% extends 'MsBase.html' %}
+{% extends 'MsBase2.html' %}
 {% load static %}
 {% block title %} Master Student | Tutorias {% endblock %}
 {% block content %}
-
 <br/>
 
 <p style="text-align:center; color: #ffffff;">Selecciona tu curso por favor</p>
-
-<br/>
-<br/>
-<br/>
-
-<p id= "lbl_curso">Selecciona tu curso por favor:</p>
-
-<form action="/TutoOpGet/" method="get">
-    <select class="form-select" aria-label="Default select example" id = "scroll" name="Curso">
-        <option selected>Curso</option>
-        <option value="10A">10A</option>
-        <option value="10B">10B</option>
-        <option value="10C">10C</option>
-    </select>
-
-
-  <br/>
-
-
-<p id="lbl_Materia">Selecciona la opcion por favor:</p>
-
-  <select class="form-select" aria-label="Default select example" id = "scroll" name="Opcion">
-      <option selected>Opcion</option>
-      <option value="Calendario">Calendario</option>
-      <option value="Agendar tutoria">Agendar tutoria</option>
-  </select>
-
-  <br/>
-  <input class="btn" type="submit" value="Continuar" id="Tu_butt_continuar">
-
-</form>
 <br/>
 <br/>
 <br/>
 <br/>
 <br/>
 <br/>
-  
+
+{# Boton de 11A #}
+<a type="button" class="btn" id = "Tu_butt_11A" href="https://calendar.google.com/calendar/u/0?cid=a2NwNDFodDIyMXRkbXVrcWc0aWZnbnRsNXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ">11A</a>
+
+{# Boton de 11B #}
+<a type="button" class="btn" id = "Tu_butt_11B" href="https://calendar.google.com/calendar/u/0?cid=cTdoOTRpZnR0OXRwNWdxM2plZm5idnFybGNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ">11B</a>
 
 <br/>
 <br/>
@@ -65,5 +38,5 @@
 {% comment "" %}<img src="{% static 'imagenes/ms.png' %}" class="img-fluid" alt="150" id = "LogoMs">
 <img src="{% static 'imagenes/realCAS.png' %}" class="img-fluid" alt="100" id = "Pinos">{% endcomment %}
 
-{%endblock content%}
+{% endblock content %}
 

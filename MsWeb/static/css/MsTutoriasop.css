@@ -1,0 +1,34 @@
+#scroll{
+    color: rgb(0, 0, 0);
+    position: relative;
+    left: 8%;
+    width: 30%;
+}
+
+#lbl_curso{
+    color: #fff;
+    position: relative;
+    left: 8%;
+}
+
+#lbl_Materia{
+    color: #fff;
+    position: relative;
+    left: 8%;
+}
+
+#Tu_butt_continuar{
+    background-color: #8CF0D8;
+    position: relative;
+    left: 8%;
+    width: 30%;
+}
+
+#Tu_butt_Volv{
+    background: #8CF0D8;
+    position: relative;
+    top: 50%;
+    left: 80.67%;
+    width: 13%;
+    height: 60px;
+}

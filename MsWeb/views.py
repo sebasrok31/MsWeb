@@ -119,13 +119,10 @@ def TutoOpGet(request):
     Curso_Get = request.GET["Curso"]
     Opcion_Get = request.GET["Opcion"]
     
-    if Curso_Get == "10A" and Opcion_Get == "Calendario":
+    if Curso_Get == "11A" and Opcion_Get == "Calendario":
         url="https://calendar.google.com/calendar/u/0?cid=a2NwNDFodDIyMXRkbXVrcWc0aWZnbnRsNXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ"
         return HttpResponseRedirect(url)
-    if Curso_Get == "10B" and Opcion_Get == "Calendario":
-        url="https://calendar.google.com/calendar/u/0?cid=ZXI0Y2p0bTQycWFna2MzanZhOHIxN2c1djhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ"
-        return HttpResponseRedirect(url)
-    if Curso_Get == "10C" and Opcion_Get == "Calendario":
+    if Curso_Get == "11B" and Opcion_Get == "Calendario":
         url="https://calendar.google.com/calendar/u/0?cid=cTdoOTRpZnR0OXRwNWdxM2plZm5idnFybGNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ"
         return HttpResponseRedirect(url)
 
@@ -134,6 +131,9 @@ def TutoOpGet(request):
     
     if Opcion_Get == "Opcion":
         return render(request, "MsTutorias.html",{})
+
+def TutoAg(request):
+    return render(request, "MsTutoAg.html",{})
 
 def TutoAgGet(request):
     Nombre_Get = request.GET["Nombre"]
@@ -185,7 +185,7 @@ def Apuntes (request):
 
 def ApuntesGet (request):
     Apuntes_Directorio={
-        "10A":{
+        "11A":{
             "Matematicas":
                 "https://drive.google.com/drive/folders/14ekHinLMcQL_DVz663x47H7wq8qpcM2A?usp=sharing",
             
@@ -215,39 +215,8 @@ def ApuntesGet (request):
             
             "Frances":
                 "https://drive.google.com/drive/folders/1zEqtB0skBa_pCLar7hZNjcrJDudzden-?usp=sharing",
-            
-        },"10B":{
-            "Matematicas":
-                "https://corgimpin-my.sharepoint.com/:w:/g/personal/roblesmorenojuansebastian_glp_edu_co/EddWViKWbQlDgDqMEio0_rABDXwgxBgiJ8PLe5AekvJ40g?e=aKdvIh",
-            
-            "Español":
-                "https://corgimpin-my.sharepoint.com/:w:/g/personal/roblesmorenojuansebastian_glp_edu_co/Ed0sRgk9bcNGsaPBTGA2N88BqJyiLMpZGnpLdJ3OOTIjlQ?e=S4ebdn",
-            
-            "Biologia":
-                "https://corgimpin-my.sharepoint.com/:w:/g/personal/roblesmorenojuansebastian_glp_edu_co/EU_3q-lnxtJHpYk-YvE_DQgBvzzDK6PSUC9S8CttUgNBJQ?e=zdJ6JZ",
-            
-            "Historia":
-                "https://corgimpin-my.sharepoint.com/:w:/g/personal/roblesmorenojuansebastian_glp_edu_co/ETXdm6PmYMhFurmgKeOaTa8BVuzY3X2WOPZ7iFR0gHUkYg?e=zYiVGq",
-            
-            "Fisica":
-                "https://corgimpin-my.sharepoint.com/:w:/g/personal/roblesmorenojuansebastian_glp_edu_co/EcpSOEP5umVDi-uE5UbEhNUBJmwDJk-wEOwHG4ceZpoIdw?e=WwnD5j",
-            
-            "Ingles":
-                "https://corgimpin-my.sharepoint.com/:w:/g/personal/roblesmorenojuansebastian_glp_edu_co/EWF0K7YqUMNAu889xpAxs94BZ6wIrl_qzg83WmhZyQ83uA?e=xIilqO",
-            
-            "Quimica":
-                "https://corgimpin-my.sharepoint.com/:w:/g/personal/roblesmorenojuansebastian_glp_edu_co/EdvtR-FllZhIo5yEuvH-plMB9jrPgMoeI8wghvIVOJ_K7Q?e=6A8DhJ",
-            
-            "TOK":
-                "https://corgimpin-my.sharepoint.com/:w:/g/personal/roblesmorenojuansebastian_glp_edu_co/Eb5BZv24K3dEl5ZLGP1LC9gBK2-iwTEO918evt6t5EzAyw?e=y2P4qw",
-            
-            "Filosofia":
-                "https://corgimpin-my.sharepoint.com/:w:/g/personal/roblesmorenojuansebastian_glp_edu_co/EQk07m7I6oRBmeOlQkA8ckgBu2Tb-Kiwqff1IR-z0epj8g?e=4V1cOF",
-            
-            "Frances":
-                "https://corgimpin-my.sharepoint.com/:w:/g/personal/roblesmorenojuansebastian_glp_edu_co/EUk5PkWTvrRMpclAVzW6IA0B8Fv676F7yED9hFd7zZlO8w?e=ju0iHk"
-        
-        }, "10C":{
+
+        }, "11B":{
             "Matematicas":
                 "https://corgimpin-my.sharepoint.com/:w:/g/personal/roblesmorenojuansebastian_glp_edu_co/EZMU3ReXB7hOtMxGZ3d01dsBbNW9ENT4uVRNDWYjJoUuYw?e=NCXS4W",
             
