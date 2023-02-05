@@ -1,0 +1,27 @@
+{%load static%}
+<!DOCTYPE html>
+    <html>
+    <head>
+        {#Bootstrap Import#}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        {# Import de CSS#}
+        <link type='text/css' href='{% static "css/MsMenu.css"%}' rel='stylesheet'/>
+        <link type='text/css' href='{% static "css/MsTareografo.css"%}' rel='stylesheet'/>
+        <link type='text/css' href='{% static "css/MsTutorias.css"%}' rel='stylesheet'/>
+        <link type='text/css' href='{% static "css/MsApuntes.css"%}' rel='stylesheet'/>
+        <link type='text/css' href='{% static "css/MsPaginasDeApoyo.css"%}' rel='stylesheet'/>
+        {#Addons Import#}
+        
+        {#Title#}
+        <title> {%block title%}{% endblock %} </title>
+    </head>
+    {#Body Base Settings#}
+    <body style="background-color:#2C3E50;">
+        <h1 style="text-align:center; color: #ffffff;"> Master Student </h1>
+        {%block content%}
+        
+        {% endblock %}
+    </body>
+</html>

@@ -1,17 +1,27 @@
-#Tu_butt_11A{
-    background: #8CF0D8;
+#scroll{
+    color: rgb(0, 0, 0);
     position: relative;
-    left: 13.33%;
-    width: 150px;
-    height: 50px;
+    left: 8%;
+    width: 30%;
 }
 
-#Tu_butt_11B{
-    background: #8CF0D8;
+#lbl_curso{
+    color: #fff;
     position: relative;
-    left: 63.67%;
-    width: 150px;
-    height: 50px;
+    left: 8%;
+}
+
+#lbl_Materia{
+    color: #fff;
+    position: relative;
+    left: 8%;
+}
+
+#Tu_butt_continuar{
+    background-color: #8CF0D8;
+    position: relative;
+    left: 8%;
+    width: 30%;
 }
 
 #Tu_butt_Volv{
@@ -19,6 +29,6 @@
     position: relative;
     top: 50%;
     left: 80.67%;
-    width: 150px;
-    height: 50px;
+    width: 13%;
+    height: 60px;
 }

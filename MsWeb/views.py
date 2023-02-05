@@ -132,9 +132,6 @@ def TutoOpGet(request):
     if Opcion_Get == "Opcion":
         return render(request, "MsTutorias.html",{})
 
-def TutoAg(request):
-    return render(request, "MsTutoAg.html",{})
-
 def TutoAgGet(request):
     Nombre_Get = request.GET["Nombre"]
     Dia_Get = request.GET["Dia"]
@@ -215,7 +212,6 @@ def ApuntesGet (request):
             
             "Frances":
                 "https://drive.google.com/drive/folders/1zEqtB0skBa_pCLar7hZNjcrJDudzden-?usp=sharing",
-
         }, "11B":{
             "Matematicas":
                 "https://corgimpin-my.sharepoint.com/:w:/g/personal/roblesmorenojuansebastian_glp_edu_co/EZMU3ReXB7hOtMxGZ3d01dsBbNW9ENT4uVRNDWYjJoUuYw?e=NCXS4W",
